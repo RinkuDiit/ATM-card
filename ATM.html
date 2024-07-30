@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATMcard</title>
+    <link rel="stylesheet" href="input.css">
+    
+</head>
+<body>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+    <div class="flip-card-front">
+        <img class="main" src="8552d1d2f0e4634c98ac0f86e76e327d.png" alt="">
+        <img class="flipkart" src="https://www.freepnglogos.com/uploads/flipkart-logo-png/flipkart-logo-hq-free-download-18.png" alt="">
+        <img class="axis" src="https://companieslogo.com/img/orig/AXISBANK.BO_BIG-88d47b7a.png?t=1672905040" alt="">
+        <p class="anumber" style="padding-top: 72px;" ><span id="number"></span></p>
+        <h6>VALUD <br> THRU</h6>
+        <p class="adate" ><span id="exdate"></span></p>
+        <p class="aname" ><span id="name"></span></p>
+        <img class="visa" src="https://cdn.freebiesupply.com/logos/large/2x/visa-logo-svg-vector.svg" alt="">
+        <img class="chip" src="https://png.pngtree.com/png-vector/20221115/ourmid/pngtree-credit-card-chip-illustration-withdrawal-concept-vector-png-image_20504836.png" alt="">
+        <img class="wifi" src="https://logodix.com/logo/1040862.png" alt="">
+
+        
+    </div>
+    <div class="flip-card-back">
+      <p class="notvalid">Not valid Foreign Exchange in Nepal & Bhutan. Not transferable.<p> 
+      <p class="vctin">VCTIN202205560875CG</p>
+      <div class="blackline"></div>
+      <div class="cvvline">
+        <span id="cvvdetails"></span>
+      </div>
+      <div class="cvvnumber"></div>
+      <p class="servisesign">AUTORIZED SIGNATURE <br><br> <span style="font-size: 8px;">8am to 8pm Customer Service: <br> 1860 500 5555 or 1860 419 5555 <br> axisbank.com/support</span></p>
+      <p class="creditcard">Credit Card</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ09KDU8aTJKJgtahcdiNWBQuOefSeoDAYAgA&usqp=CAU" alt="" class="hologram">
+    </div>
+  </div>
+</div>
+    
+  
+    
+  <div class="details">
+    Enter your name: <input type="text" id="fname" onkeyup="myFunction()"><br> <br>
+    Enter your number: <input type="text" id="fnumber" onkeyup="inputMask()"><br><br>
+    Enter your expare date: <input type="taxt" id="fdate" onkeyup="inputMasks()">
+    Enter your CVV: <input type="text" id="fcvv" onkeyup="mycvv()"><br> <br>
+
+  </div>  
+    
+  
+
+    <script>
+    function myFunction() {
+
+      let x = document.getElementById("fname").value;
+      document.getElementById("name").innerHTML = x;
+
+      let a = document.getElementById("fcvv").value;
+      document.getElementById("cvvdetails").innerHTML = a;
+
+      // let y = document.getElementById("fnumber").value;
+    
+
+      // document.getElementById("number").innerHTML = y;
+
+      let z = document.getElementById("fdate").value;
+      document.getElementById("exdate").innerHTML = z;
+
+    }
+
+    function inputMask(){
+        const element = document.getElementById('fnumber');
+        const maskOptions = {
+        mask: '0000 0000 0000 0000'
+        };
+        const mask = IMask(element, maskOptions); 
+        document.getElementById('number').innerHTML= mask.value;
+      }
+
+
+      function inputMasks(){
+        const element = document.getElementById('fdate');
+        const maskOptions = {
+        mask: '00/00'
+        };
+        const mask = IMask(element, maskOptions); 
+        document.getElementById('exdate').innerHTML= mask.value;
+      }
+
+      
+      function mycvv(){
+        const element = document.getElementById('fcvv');
+        const maskOptions = {
+        mask: '000'
+        };
+        const mask = IMask(element, maskOptions); 
+        document.getElementById('cvvdetails').innerHTML= mask.value;
+      }
+
+    </script>
+
+
+    <script src="https://unpkg.com/imask"></script>
+
+</body>
+</html>
